@@ -9,7 +9,7 @@ import collections
 import os
 import glob
 
-path = r'C:\Users\wangjing\Homework\PMT Experiment\singlephoton' # use your path
+path = r'C:\Users\wangjing\Homework\PMT Experiment\doublephoton' # use your path
 all_files = glob.glob(path + "/*.csv")
 
 
@@ -17,8 +17,8 @@ all_files = glob.glob(path + "/*.csv")
 for filename in all_files:
     
     df1 = pd.read_csv(filename , skiprows=4700, nrows=500 , header=None , usecols=[1] , engine='python')
-    df2 = pd.read_csv(filename , skiprows=0, nrows=500 , header=None, usecols=[1] , engine='python')  
-    df3 = pd.read_csv(filename , skiprows=6000, nrows=500 , header=None, usecols=[1] , engine='python')  
+    df2 = pd.read_csv(filename , skiprows=0, nrows=4500 , header=None, usecols=[1] , engine='python')  
+    df3 = pd.read_csv(filename , skiprows=6000, nrows=3000 , header=None, usecols=[1] , engine='python')  
     pd.set_option("display.float_format", "{:.11f}".format)
 
     #Plot
@@ -36,7 +36,7 @@ for filename in all_files:
     #plt.show()
 
    # print(df3.mean())
-    df4 = -(df1.sum() - (df2.sum() + df3.sum())/2 )
+    df4 = -(df1.sum() - (df2.sum() + df3.sum())/15 )
     print(df4)
     
 
