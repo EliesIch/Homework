@@ -3,6 +3,12 @@
     "python.pythonPath": "C:\\Users\\wangjing\\AppData\\Local\\Continuum\\anaconda3\\python.exe",
     "files.associations": {
         "peaks.C": "cpp",
-        "Test.C": "cpp"
+        "Test.C": "cpp",
+        "Lesson 3 - Fitting Data.C": "cpp",
+        "Lesson 4 - Histograms.C": "cpp",
+        "Lesson 4 - Histograms2.C": "cpp",
+        "ReadSpectrum.C": "cpp",
+        "FitIRMMSpectrum.C": "cpp",
+        "cstdio": "cpp"
     }
 }
