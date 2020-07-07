@@ -49,20 +49,5 @@ for filename in all_files:
       #      writer.writerow(line)
         
     df4.to_csv('Result.csv', mode='a')
-#Define sum
-#df1.loc['Col_sum'] = df1.apply(lambda x: x.sum())
-#df2.loc['Col_sum'] = df1.apply(lambda y: y.sum())
-#df1.loc['Col_ave'] = df1.apply(lambda y: y.mean())
-#df2.loc['Col_ave'] = df1.apply(lambda y: y.mean())
 
-#df4 = df1.loc[['Col_sum'],[1]] - df2.loc[['Col_ave'],[1]]
-#print(df1.iloc[[4000],[0]])
-#print(df1.loc[['Col_sum'],[1]])
-#print(df2.loc[['Col_ave'],[1]])
-
-#print(df4)
-#print(df1.loc[['Col_sum'],[1]] - df2.loc[['Col_ave'],[1]])
-#df1.to_csv('data_1.txt')
-#for col in df1.columns:
-    #print(df1[col[0]].mean())
 

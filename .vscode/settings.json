@@ -9,6 +9,8 @@
         "Lesson 4 - Histograms2.C": "cpp",
         "ReadSpectrum.C": "cpp",
         "FitIRMMSpectrum.C": "cpp",
-        "cstdio": "cpp"
+        "cstdio": "cpp",
+        "His.C": "cpp",
+        "basic.C": "cpp"
     }
 }
