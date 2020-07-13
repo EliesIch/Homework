@@ -218,47 +218,51 @@ void ShowDescriptor(WAVE_DESC *wd)
 	printf("wave_source:%d\n",wd->wave_source);
 }
 
-#define num 3000
+#define num 500
 int main(){
 
-    //保存文件名
-    system("dir C:\\Users\\wangjing\\Homework\\7.7\\Pulsewidth\\*.trc /b > C:\\Users\\wangjing\\Homework\\7.7\\Pulsewidth\\name.dat");
+    //Generate namebook
+    //system("dir E:\\7.9\\Single2\\*.trc /b > C:\\Users\\wangjing\\Homework\\name.dat");
     //这句话使用了系统的DOS命令，将该问佳佳下所有的txt文档的文件名导入到一个文本文件中去
-    //然后导入这个文件的内容，使用字符串变量生成文件路径，作为参数依次导入文件
-    char str[10000] = {"C:\\Users\\wangjing\\Homework\\7.7\\Pulsewidth\\"}, str1[num][5];
+   
+    //Define address
+    char str[60] = "E:\\7.9\\Single2\\";
+	char str1[num] = "";
     
     FILE *in, *fp;
-	char binWaveform[2001000];
+	char binWaveform[2001000] = "";
 	WAVE_DESC wd;
-    
-
-    in = fopen("C:\\Users\\wangjing\\Homework\\7.7\\Pulsewidth\\name.dat", "r");
+    //Open nambook and read 
+    in = fopen("E:\\7.9\\Single2\\name.dat", "r");
     if (in == NULL)
     {
         printf("can't open the file.");
         exit(0);
     }
+	//Add name to the end of path as filepath
     for (int i = 0; i < num; i++)
     {
-        fscanf(in, "%s", &str1[i][0]);
-        strcat(str, &str1[i][0]);
+        fscanf(in, "%s", str1);
+        strcat(str, str1);
         printf("%s  length=%d\n", str, strlen(str));
+		//open file
         fp = fopen(str, "rb");
         if(fp==NULL){
                 printf("Can't open the file");
+				exit(0);
         }
         fread(binWaveform,1,2001000,fp);
         GetDescriptor(binWaveform,&wd);
-        //ShowDescriptor(&wd);
         fclose(fp);
 
 		//Save waveform data with time
-		char newcsvname[16];
-		sprintf(newcsvname,"C1Trace%d.csv",i);
+		char newcsvname[16] = "";
+		sprintf(newcsvname,"C1Trac%d.csv",i);
 
-		char *fname;
+		char *fname = 0;
 		fname = newcsvname;
 
+	
 		fp=fopen(fname,"w");
 		if(fp==NULL){
 			printf("Can't open file\n");
@@ -294,7 +298,8 @@ int main(){
 			};
 		};
 			fclose(fp);
-	    strcpy(str,"C:\\Users\\wangjing\\Homework\\7.7\\Pulsewidth\\");    //Very important!!!!!!  To clean the string "str" or say recover it without name of file!!!!!
+			
+	    strcpy(str,"E:\\7.9\\Single2\\");    //Very important!!!!!!  To clean the string "str" or say recover it without name of file!!!!!
     }
     fclose(in);
 return 0;
