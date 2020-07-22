@@ -218,22 +218,24 @@ void ShowDescriptor(WAVE_DESC *wd)
 	printf("wave_source:%d\n",wd->wave_source);
 }
 
-#define num 500
+#define num 3000
 int main(){
 
     //Generate namebook
-    //system("dir E:\\7.9\\Single2\\*.trc /b > C:\\Users\\wangjing\\Homework\\name.dat");
+    //system("dir E:\\7.15\\Test\\*.trc /b > C:\\Users\\wangjing\\Homework\\name.dat");
     //这句话使用了系统的DOS命令，将该问佳佳下所有的txt文档的文件名导入到一个文本文件中去
    
     //Define address
-    char str[60] = "E:\\7.9\\Single2\\";
-	char str1[num] = "";
+    char str[60] = "E:\\7.15\\Test\\";
+	char str1[30] = "";
+	
+	
     
     FILE *in, *fp;
 	char binWaveform[2001000] = "";
 	WAVE_DESC wd;
     //Open nambook and read 
-    in = fopen("E:\\7.9\\Single2\\name.dat", "r");
+    in = fopen("E:\\7.15\\Test\\name.dat", "r");
     if (in == NULL)
     {
         printf("can't open the file.");
@@ -299,7 +301,7 @@ int main(){
 		};
 			fclose(fp);
 			
-	    strcpy(str,"E:\\7.9\\Single2\\");    //Very important!!!!!!  To clean the string "str" or say recover it without name of file!!!!!
+	    strcpy(str,"E:\\7.15\\Test\\");    //Very important!!!!!!  To clean the string "str" or say recover it without name of file!!!!!
     }
     fclose(in);
 return 0;

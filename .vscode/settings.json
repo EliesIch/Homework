@@ -11,6 +11,13 @@
         "FitIRMMSpectrum.C": "cpp",
         "cstdio": "cpp",
         "His.C": "cpp",
-        "basic.C": "cpp"
+        "basic.C": "cpp",
+        "HisGaus.C": "cpp",
+        "c1.C": "cpp",
+        "7.15.C": "cpp",
+        "15.C": "cpp",
+        "HisMultigaus.C": "cpp",
+        "Histo.C": "cpp",
+        "HisPoisson.C": "cpp"
     }
 }
