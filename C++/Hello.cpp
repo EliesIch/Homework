@@ -2,6 +2,6 @@
 using namespace std;
 int main()
 {
-    cout << "Hello" << endl;
+    cout << "Size of int is: \t" << sizeof(int) <<"bytes\n";
     return (0);
 }

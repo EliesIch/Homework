@@ -1,7 +1,13 @@
-
 {
     "version": "0.2.0",
     "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
         {
             "name": "C/C++",
             "type": "cppdbg",
@@ -13,7 +19,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "gdb.exe",
+            "miDebuggerPath": "C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/gdb.exe",
             "preLaunchTask": "compile",
             "setupCommands": [
                 {
@@ -22,6 +28,7 @@
                     "ignoreFailures": true
                 }
             ],
+            // "console": "none"，
         },
     ]
 }
