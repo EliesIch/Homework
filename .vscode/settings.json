@@ -19,7 +19,7 @@
         "HisMultigaus.C": "cpp",
         "Histo.C": "cpp",
         "HisPoisson.C": "cpp"
-    }
+    },
     // laTeX
     "latex-workshop.latex.tools": [
         {
@@ -129,9 +129,10 @@
     "git.confirmSync": false,
     "git.enableSmartCommit": true,
     "C_Cpp.updateChannel": "Insiders",
-    "python.formatting.provider": "yapf",
-    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+    //"python.formatting.provider": "yapf",
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
     "terminal.integrated.shellArgs.windows": [
         "-NoLogo"
-    ]
+    ],
+    "code-runner.runInTerminal": true,
 }

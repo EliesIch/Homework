@@ -28,7 +28,7 @@
                     "ignoreFailures": true
                 }
             ],
-            // "console": "none"，
+            // "console": "internalConsole"，
         },
     ]
 }

@@ -1,6 +1,9 @@
 import numpy as np
+a = np.array(([1,1], [0,1]))
 
-a = np.array([[1, 2, 4], [3, 6, 9]],dtype=np.int)
+b = np.arange(4).reshape((2, 2))
 
+c = np.dot(a,b)
 print(a)
-print('Dim:', a.ndim)
+print(b)
+print(c)
