@@ -18,7 +18,8 @@
         "15.C": "cpp",
         "HisMultigaus.C": "cpp",
         "Histo.C": "cpp",
-        "HisPoisson.C": "cpp"
+        "HisPoisson.C": "cpp",
+        "fit2.C": "cpp"
     },
     // laTeX
     "latex-workshop.latex.tools": [
