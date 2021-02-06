@@ -1,5 +1,5 @@
 import numpy as np
-import pandas as 
+
 a = np.array(([1,1], [0,1]))
 
 b = np.arange(4).reshape((2, 2))
