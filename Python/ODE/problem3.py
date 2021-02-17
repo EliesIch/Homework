@@ -5,22 +5,25 @@ import matplotlib.pyplot as plt
 #from mpl_toolkits.mplot3d import Axes3D
 
 
-def model(y, t):
-    if (t < 10.0):
-        u = 0.0
-    else:
-        u = 2.0
-    dydt = (-y + u) / 5.0
-    return dydt
+def model(z, t):
+    x = z[0]
+    y=z[1]
+    dxdt = 3.0* np.exp(-t)
+    dydt = 3.0-y
+    return [dxdt,dydt]
 
 
-y0 = 1
+
+z0=[0,0]
+
 
 t = np.linspace(0, 35, 100)
 
-y = odeint(model, y0, t)
-
-plt.plot(t, y)
+z = odeint(model, z0, t)
+x= z[:,0]
+y= z[:,1]
+plt.plot(t, x,'r-')
+plt.plot(t, y,'b--')
 plt.xlabel('time')
-plt.ylabel('y(t)')
+plt.legend(['x(t)','y(t)'])
 plt.show()
