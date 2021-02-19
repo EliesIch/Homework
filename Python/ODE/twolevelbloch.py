@@ -13,6 +13,7 @@ def model(z, t):  #define ODE
     v = z[1]
     w = z[2]
 
+    omega = np.pi*t
     dudt = delta * v - gamma_2 * u
     dvdt = omega * w - delta * u - gamma_2 * v
     dwdt = -omega * v - gamma_1 * (w + 1)
@@ -20,15 +21,17 @@ def model(z, t):  #define ODE
 
 
 #parameters
-gamma_1 = 0.1
+gamma_1 = 0
 gamma_2 = gamma_1 / 2.0 + 0
-delta = 0.5
-omega = 1
+delta = 0
+
 #initial conditions
 z0 = [0, 0, -1]
 #time range
-t = np.linspace(0, 20 * np.pi, 1000)
+t = np.linspace(0, 5* np.pi, 1000)
 #solve ODE
+
+
 z = odeint(model, z0, t)
 #bloch vectors
 u = z[:, 0]
