@@ -30,11 +30,12 @@ line = plt.plot(dataSet[0], dataSet[1], dataSet[2], lw=2,
 
 # AXES PROPERTIES]
 # ax.set_xlim3d([limit0, limit1])
+'''
 ax.set_xlabel('X(t)')
 ax.set_ylabel('Y(t)')
 ax.set_zlabel('time')
 ax.set_title('Trajectory of electron for E vector along [120]')
-
+'''
 # Creating the Animation object
 line_ani = animation.FuncAnimation(fig,
                                    func,

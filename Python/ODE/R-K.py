@@ -4,9 +4,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint
 
+import time  #code optimize
+start = time.perf_counter()
 
 def dydx(x, y):
-    return ((x - y) / 2)
+    return ((np.sin(x) - y) / 2)
 
 
 # Finds value of y for a given x using step size h
@@ -37,9 +39,12 @@ x0 = 0
 y0 = 0
 #x = 3.5
 h = 0.2
-n=100
-x = np.linspace(0, 100, n)
+
+
+n=1000
+x = np.linspace(0 ,100, n)
 y1 = np.empty_like(x)
+
 
 for i in range(1, n):
     y1[i] = rungeKutta(x0, y0, x[i], h)
@@ -47,7 +52,7 @@ for i in range(1, n):
 
 #odeint
 def model(y, x):
-    dydx = ((x - y) / 2)
+    dydx = ((np.sin(x) - y) / 2)
     return dydx
 
 
@@ -55,9 +60,13 @@ y2 = odeint(model, y0, x)
 
 # plot results
 plt.plot(x, y1, 'g:', label='y1')
-plt.plot(x, y2, 'b-', label='y2')
+plt.plot(x, y2, 'b--', label='y2')
 plt.xlabel('x')
 plt.legend([r'R-K', r'Exact'])
+
+
+end = time.perf_counter()
+print('Running time: %s Seconds' % (end - start))  #time cost
 plt.show()
 
 #print ('The value of y at x is:', rungeKutta(x0, y, x, h))
