@@ -74,7 +74,7 @@ y2 = -np.cos(x) + 1
 y3 = np.empty_like(x)
 
 c0 = ([0.0])
-vip = solve_ivp(dydx, [0, 50], c0, t_eval=x, first_step=None, max_step=0.001)
+vip = solve_ivp(dydx, [0, 50], c0, t_eval=x, method='DOP853',first_step=None, max_step=0.001)
 y4 = vip.y[0]
 
 for i in range(1, n):
@@ -90,20 +90,20 @@ def model(y, x):
     return (np.sin(x))
 
 
-y5 = odeint(model, y0, x, hmax=0.001, mxords=5)
+y5 = odeint(model, y0, x, hmax=0.001, mxords=6)
 
 plt.subplot(211)
 # plot results
 #plt.plot(x, y1, 'g:')
 plt.plot(x, y2, 'b:')
-plt.plot(x, y5 + 0.5, 'r--')
+#plt.plot(x, y5 + 0.5, 'r--')
 plt.plot(x, y4 + 1, 'r--')
 plt.xlabel('x')
 plt.legend([r'RK', r'Exact', r'Odeint', r'Vip_RK'])
 plt.subplot(212)
-plt.plot(x, (y4 - y2) / y2, 'b--')
-plt.plot(x, (y1 - y2) / y2, 'r-')
-plt.plot(x, (y5 - y2) / y2, 'g:')
+plt.plot(x, (y4 - y2) , 'b--')
+plt.plot(x, (y1 - y2) , 'r-')
+#plt.plot(x, (y5 - y2) / y2, 'g:')
 plt.legend([r'vip', r'RK', r'odeint'])
 
 #plt.ylim(-0.1, 0.1)

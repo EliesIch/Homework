@@ -16,11 +16,11 @@ def model(z, t):
 
 
 # initial condition
-z0 = [0.1, 1,0]
-k=2
-gamma_1=0
-gamma_2=0.05
-# number of time points
+z0 = [0.00001, 1,0]
+k=0.1
+gamma_1=0.01
+gamma_2=0.01
+# number of ti1me points
 n = 4000
 
 # time points
@@ -51,9 +51,9 @@ for i in range(1, n):
     z0 = z[1]
 
 # plot results
-plt.plot(t, e, 'g:', label='E(t)')
-plt.plot(t, x, 'b-', label='R(t)')
-plt.plot(t, y, 'r--', label='Z(t)')
+plt.plot(t, np.square(e), 'g:', label='E(t)[Field]')
+plt.plot(t, x, 'b-', label='R(t)[Coherence]')
+plt.plot(t, y, 'r--', label='Z(t)[Population Difference]')
 plt.ylabel('values')
 plt.xlabel('time')
 plt.legend(loc='best')
